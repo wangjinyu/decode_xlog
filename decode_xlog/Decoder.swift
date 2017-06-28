@@ -11,11 +11,17 @@ import Cocoa
 class Decoder: NSObject {
     public var logUrlString : String?
     public var isDecoding : Bool?
-    override init() {
+    
+    static let defaultDecoder = Decoder();
+    
+    private override init() {
         super.init()
     }
     
     public func startDecode() {
         print("开始下载日志文件");
     }
+    
+    
+    
 }

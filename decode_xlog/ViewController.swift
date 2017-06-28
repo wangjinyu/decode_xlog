@@ -12,8 +12,10 @@ import Alamofire
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var textField: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override var representedObject: Any? {

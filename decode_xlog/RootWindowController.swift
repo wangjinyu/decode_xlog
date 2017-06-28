@@ -13,11 +13,12 @@ class RootWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-
+        self.window?.titleVisibility = .hidden
     }
     
     @IBAction func startDecodeAction(_ sender: NSToolbarItem) {
-        let decoder :Decoder = Decoder();
+        let decoder :Decoder = Decoder.defaultDecoder;
         decoder.startDecode();
     }
+    
 }
