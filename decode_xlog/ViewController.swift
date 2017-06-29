@@ -10,12 +10,14 @@
 import Cocoa
 import Alamofire
 
-class ViewController: NSViewController {
+class ViewController: NSViewController,DecoderDelegate {
 
     @IBOutlet weak var textField: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.textField.focusRingType = .none
+        Decoder.defaultDecoder.delegate = self as DecoderDelegate;
+        
     }
 
     override var representedObject: Any? {
@@ -24,5 +26,12 @@ class ViewController: NSViewController {
         }
     }
 
+    func getCurrentLogUrlString() -> String? {
+        return self.textField.stringValue
+    }
+    
+    func updateDownloadProgress(progress: Float) {
+        print("progress : \(progress)")
+    }
 }
 

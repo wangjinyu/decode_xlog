@@ -284,20 +284,6 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Una-EN-aVW"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="ZVV-rB-TZj"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="0YQ-3S-yE2"/>
-                                <toolbarItem implicitItemIdentifier="4157E12B-ACDD-4D15-A761-D1A67B3B35FD" label="" paletteLabel="" id="tad-Ly-mBB">
-                                    <nil key="toolTip"/>
-                                    <size key="minSize" width="38" height="17"/>
-                                    <size key="maxSize" width="116" height="24"/>
-                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="NO" id="qSG-Fo-KHu">
-                                        <rect key="frame" x="0.0" y="14" width="112" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="xlog decoder" id="Erd-zl-qHu">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="D67CB9BD-FD4C-4443-9193-BA69E0251AD0" label="" paletteLabel="" image="run_icon" id="Fhu-oD-Y9H">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="30" height="26"/>
@@ -319,10 +305,6 @@
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Fhu-oD-Y9H"/>
-                                <toolbarItem reference="0YQ-3S-yE2"/>
-                                <toolbarItem reference="tad-Ly-mBB"/>
-                                <toolbarItem reference="ZVV-rB-TZj"/>
-                                <toolbarItem reference="0YQ-3S-yE2"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <contentBorderThickness minY="32"/>
@@ -344,13 +326,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="720"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inI-5e-4DI">
+                            <textField focusRingType="none" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inI-5e-4DI">
                                 <rect key="frame" x="20" y="660" width="1040" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="csZ-S9-N9W"/>
                                 </constraints>
-                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="输入（粘贴）log文件地址" bezelStyle="round" id="gdy-bx-QEU">
-                                    <font key="font" metaFont="system" size="14"/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="输入（粘贴）log文件地址" bezelStyle="round" id="gdy-bx-QEU">
+                                    <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -369,7 +351,7 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="tfg-Gy-kEc"/>
             </objects>
-            <point key="canvasLocation" x="338" y="914"/>
+            <point key="canvasLocation" x="318" y="916"/>
         </scene>
     </scenes>
     <resources>
