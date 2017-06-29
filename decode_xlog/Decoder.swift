@@ -10,7 +10,7 @@ import Cocoa
 
 class Decoder: NSObject {
     public var logUrlString : String?
-    public var isDecoding : Bool?
+    public var isDecoding : Bool = false;
     
     static let defaultDecoder = Decoder();
     
@@ -19,9 +19,13 @@ class Decoder: NSObject {
     }
     
     public func startDecode() {
+        self.isDecoding = true;
         print("开始下载日志文件");
     }
-    
+    public func stopDecode() {
+        self.isDecoding = false;
+        print("停止解析");
+    }
     
     
 }

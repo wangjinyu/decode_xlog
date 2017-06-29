@@ -16,9 +16,15 @@ class RootWindowController: NSWindowController {
         self.window?.titleVisibility = .hidden
     }
     
-    @IBAction func startDecodeAction(_ sender: NSToolbarItem) {
-        let decoder :Decoder = Decoder.defaultDecoder;
-        decoder.startDecode();
+    @IBAction func startDecodeAction(_ sender: NSButton) {
+        if Decoder.defaultDecoder.isDecoding == false {
+            sender.image = NSImage.init(named: "stop_icon")
+            sender.alternateImage = NSImage.init(named: "run_icon");
+            Decoder.defaultDecoder.startDecode()
+        } else {
+            sender.image = NSImage.init(named: "run_icon")
+            sender.alternateImage = NSImage.init(named: "stop_icon");
+            Decoder.defaultDecoder.stopDecode()
+        }
     }
-    
 }

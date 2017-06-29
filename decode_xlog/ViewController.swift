@@ -15,7 +15,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var textField: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.textField.focusRingType = .none
     }
 
     override var representedObject: Any? {

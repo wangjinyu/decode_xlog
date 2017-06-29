@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -270,7 +269,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="RootWindowController" customModule="xLogDecoder" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="xlog 文件解析" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="aqua" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="aqua" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="0.0" y="427" width="1080" height="720"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -285,44 +284,44 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Una-EN-aVW"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="ZVV-rB-TZj"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="0YQ-3S-yE2"/>
-                                <toolbarItem implicitItemIdentifier="F2A0CD45-C443-4FFC-B6E2-3884E0D9EAA8" label="decode" paletteLabel="decode" tag="-1" image="run_icon" autovalidates="NO" id="hHk-mB-5uk">
-                                    <connections>
-                                        <action selector="startDecodeAction:" target="B8D-0N-5wS" id="YnF-GV-OyZ"/>
-                                    </connections>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="66680139-6EED-4C1C-86B1-1ACAB3984CCF" label="Custom View" paletteLabel="Custom View" id="2il-d2-ViL">
+                                <toolbarItem implicitItemIdentifier="4157E12B-ACDD-4D15-A761-D1A67B3B35FD" label="" paletteLabel="" id="tad-Ly-mBB">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="96" height="22"/>
-                                    <size key="maxSize" width="96" height="22"/>
-                                    <textField key="view" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" id="fed-iU-Tft">
-                                        <rect key="frame" x="0.0" y="14" width="96" height="22"/>
+                                    <size key="minSize" width="38" height="17"/>
+                                    <size key="maxSize" width="116" height="24"/>
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="NO" id="qSG-Fo-KHu">
+                                        <rect key="frame" x="0.0" y="14" width="112" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Y20-GE-e2k">
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="xlog decoder" id="Erd-zl-qHu">
                                             <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="6D5BEAC3-4AC0-49D4-A266-C51A19B3B5B9" label="decode" paletteLabel="decode" image="run_icon" id="44R-3v-TwP">
+                                <toolbarItem implicitItemIdentifier="D67CB9BD-FD4C-4443-9193-BA69E0251AD0" label="" paletteLabel="" image="run_icon" id="Fhu-oD-Y9H">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="38" height="38"/>
-                                    <size key="maxSize" width="38" height="38"/>
-                                    <button key="view" id="Omg-Ot-OZr">
-                                        <rect key="frame" x="0.0" y="14" width="48" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="run_icon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="dgQ-sP-o8U">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <size key="minSize" width="30" height="26"/>
+                                    <size key="maxSize" width="30" height="26"/>
+                                    <button key="view" id="eXs-Zj-5Bh">
+                                        <rect key="frame" x="0.0" y="14" width="30" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="run_icon" imagePosition="only" alignment="center" alternateImage="stop_icon" imageScaling="proportionallyUpOrDown" inset="2" id="gJ8-mK-ohB">
+                                            <behavior key="behavior" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent">r</string>
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="startDecodeAction:" target="B8D-0N-5wS" id="qZJ-Jk-zZ0"/>
+                                        </connections>
                                     </button>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="hHk-mB-5uk"/>
-                                <toolbarItem reference="44R-3v-TwP"/>
+                                <toolbarItem reference="Fhu-oD-Y9H"/>
                                 <toolbarItem reference="0YQ-3S-yE2"/>
-                                <toolbarItem reference="2il-d2-ViL"/>
+                                <toolbarItem reference="tad-Ly-mBB"/>
+                                <toolbarItem reference="ZVV-rB-TZj"/>
                                 <toolbarItem reference="0YQ-3S-yE2"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -350,7 +349,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="csZ-S9-N9W"/>
                                 </constraints>
-                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="输入（粘贴）log文件地址" usesSingleLineMode="YES" bezelStyle="round" id="gdy-bx-QEU">
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="输入（粘贴）log文件地址" bezelStyle="round" id="gdy-bx-QEU">
                                     <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -374,6 +373,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="run_icon" width="19" height="19"/>
+        <image name="run_icon" width="19" height="13"/>
+        <image name="stop_icon" width="19" height="13"/>
     </resources>
 </document>
