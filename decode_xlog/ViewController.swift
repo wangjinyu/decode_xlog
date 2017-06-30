@@ -18,6 +18,8 @@ class ViewController: NSViewController,DecoderDelegate {
         super.viewDidLoad()
         Decoder.defaultDecoder.delegate = self as DecoderDelegate;
         
+        decode_swift.init().decode()
+        
     }
 
     override var representedObject: Any? {
@@ -25,13 +27,14 @@ class ViewController: NSViewController,DecoderDelegate {
             
         }
     }
+}
 
+extension ViewController {
+    func updateDecodeMessage(message: String) {
+        print("\(message)")
+    }
+    
     func getCurrentLogUrlString() -> String? {
         return self.textField.stringValue
     }
-    
-    func updateDownloadProgress(progress: Float) {
-        print("progress : \(progress)")
-    }
 }
-
