@@ -9,6 +9,7 @@
 
 import Cocoa
 import Alamofire
+import SwiftShell
 
 class ViewController: NSViewController, DecoderDelegate, NSTableViewDelegate, NSTableViewDataSource {
 

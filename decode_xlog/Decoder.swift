@@ -70,7 +70,7 @@ class Decoder: NSObject {
                 let filename :String = (response.response?.suggestedFilename)!
                 if filename.hasSuffix(".zip") {
                     self.delegate?.updateDecodeMessage(message: "日志文件下载完成. file_name : \(filename)")
-                    _ = self.getXlogFilesWithZipFile(zipFilePath: (response.destinationURL)!);
+                    self.getXlogFilesWithZipFile(zipFilePath: (response.destinationURL)!);
                 } else {
                     NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "decode_error"), object: nil)
                     self.isDecoding = false
@@ -87,7 +87,7 @@ class Decoder: NSObject {
 }
 
 extension Decoder {
-    fileprivate func getXlogFilesWithZipFile (zipFilePath:URL) -> [String] {
+    fileprivate func getXlogFilesWithZipFile (zipFilePath:URL) {
         do {
             let zip_file_name = zipFilePath.lastPathComponent
             let unzip_file_directory = zip_file_name.components(separatedBy: ".")[0]
@@ -107,17 +107,25 @@ extension Decoder {
                     file_names = try! FileManager.default.contentsOfDirectory(atPath: fileURL.absoluteString.components(separatedBy: "://").last!)
                     
                     for file in file_names {
-                        if file.hasSuffix(".xlog") {
+                        if file.hasSuffix(".xlog") == true {
                             self.delegate?.updateDecodeMessage(message: "开始解码日志文件... file_name : \(file)")
                             let file_url = fileURL.appendingPathComponent(file)
                             _ = self.decode_xlog_file(file_url: file_url, distination: fileURL)
                         }
                     }
+                    
+                    file_names = try! FileManager.default.contentsOfDirectory(atPath: fileURL.absoluteString.components(separatedBy: "://").last!)
+                    
+                    if file_names.count > 1 {
+                        run("open", fileURL)
+                    } else {
+                        let url = fileURL.appendingPathComponent(file_names.first!)
+                        run("open", (url.absoluteString.components(separatedBy: "://").last!))
+                    }
                     self.isDecoding = false
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "decode_complete"), object: nil)
                 }
             })
-            return file_names;
             
         } catch ZipError.unzipFail {
             NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "decode_error"), object: nil)
@@ -132,7 +140,6 @@ extension Decoder {
             self.isDecoding = false
             self.delegate?.updateDecodeMessage(message: "[Error]. 日志文件解压失败, 未知错误")
         }
-        return []
     }
     
     fileprivate func decode_xlog_file(file_url : URL, distination: URL) -> Bool {
