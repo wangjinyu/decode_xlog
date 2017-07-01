@@ -10,10 +10,20 @@ import Cocoa
 
 class RootWindowController: NSWindowController {
     @IBOutlet weak var toolBar: NSToolbar!
+    @IBOutlet weak var decodeButton: NSButton!
 
     override func windowDidLoad() {
         super.windowDidLoad()
         self.window?.titleVisibility = .hidden
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "decode_complete"), object: nil, queue: OperationQueue.main) { (notification) in
+            self.decodeButton.image = NSImage.init(named: "run_icon")
+            self.decodeButton.alternateImage = NSImage.init(named: "stop_icon");
+        }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "decode_error"), object: nil, queue: OperationQueue.main) { (notification) in
+            self.decodeButton.image = NSImage.init(named: "run_icon")
+            self.decodeButton.alternateImage = NSImage.init(named: "stop_icon");
+        }
     }
     
     @IBAction func startDecodeAction(_ sender: NSButton) {
@@ -21,10 +31,6 @@ class RootWindowController: NSWindowController {
             sender.image = NSImage.init(named: "stop_icon")
             sender.alternateImage = NSImage.init(named: "run_icon");
             Decoder.defaultDecoder.startDecode()
-        } else {
-            sender.image = NSImage.init(named: "run_icon")
-            sender.alternateImage = NSImage.init(named: "stop_icon");
-            Decoder.defaultDecoder.stopDecode()
         }
     }
 }
