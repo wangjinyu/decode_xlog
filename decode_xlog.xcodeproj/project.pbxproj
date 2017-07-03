@@ -50,6 +50,7 @@
 		711E0B5A1F034F630004BF3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		711E0B5C1F034F630004BF3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7162A23B1F0352BB000F22EC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		718A988A1F09E8F200C79BFA /* xLogDecoder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xLogDecoder.entitlements; sourceTree = "<group>"; };
 		7193A6A81F0619520098D0FA /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/Mac/Zip.framework; sourceTree = "<group>"; };
 		71ABCE401F03889200FEC4A1 /* image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = image.xcassets; sourceTree = "<group>"; };
 		71ABCE421F03905100FEC4A1 /* RootWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWindowController.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		711E0B521F034F630004BF3F /* decode_xlog */ = {
 			isa = PBXGroup;
 			children = (
+				718A988A1F09E8F200C79BFA /* xLogDecoder.entitlements */,
 				711E0B531F034F630004BF3F /* AppDelegate.swift */,
 				71ABCE421F03905100FEC4A1 /* RootWindowController.swift */,
 				711E0B551F034F630004BF3F /* ViewController.swift */,
@@ -150,6 +152,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 6SEP4AQ5W5;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -306,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = decode_xlog/xLogDecoder.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -326,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = decode_xlog/xLogDecoder.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
