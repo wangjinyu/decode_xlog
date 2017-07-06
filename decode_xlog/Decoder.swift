@@ -62,7 +62,6 @@ class Decoder: NSObject {
         self.downloadRequest = Alamofire.download(urlString, to: destination)
         
         self.downloadRequest?.downloadProgress(closure: { progress in
-            
         })
         
         self.downloadRequest?.responseData(completionHandler: { (response) in
@@ -100,11 +99,12 @@ extension Decoder {
             
             try Zip.unzipFile(zipFilePath, destination: fileURL, overwrite: true, password: "", progress: { (progress) in
                 if progress == 1.0 {
-                    self.delegate?.updateDecodeMessage(message: "xlog 日志文件解压完成. log file directory : \(String(describing: fileURL.absoluteString.components(separatedBy: "://").last!))")
+                    self.delegate?.updateDecodeMessage(message: "xlog 日志文件解压完成.")
                     //删除 zip 文件
                     try? FileManager.default.removeItem(at: zipFilePath)
                     
                     file_names = try! FileManager.default.contentsOfDirectory(atPath: fileURL.absoluteString.components(separatedBy: "://").last!)
+                    
                     
                     for file in file_names {
                         if file.hasSuffix(".xlog") == true {
@@ -113,7 +113,7 @@ extension Decoder {
                             _ = self.decode_xlog_file(file_url: file_url, distination: fileURL)
                         }
                     }
-                    
+
                     file_names = try! FileManager.default.contentsOfDirectory(atPath: fileURL.absoluteString.components(separatedBy: "://").last!)
                     
                     if file_names.count > 1 {
